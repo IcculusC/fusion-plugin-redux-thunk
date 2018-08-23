@@ -69,5 +69,9 @@
   "files": [
     "dist",
     "src"
-  ]
+  ],
+  "dependencies": {
+    "fusion-plugin-react-redux": "^1.0.8",
+    "fusion-react": "^1.2.0"
+  }
 }
