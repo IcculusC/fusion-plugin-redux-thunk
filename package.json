@@ -1,7 +1,7 @@
 {
   "name": "fusion-plugin-redux-thunk",
   "description": "FusionJS plugin for redux-thunk",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "license": "MIT",
   "repository": "IcculusC/fusion-plugin-redux-thunk",
   "main": "./dist/index.js",
