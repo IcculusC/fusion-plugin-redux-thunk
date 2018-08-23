@@ -2,6 +2,8 @@
 
 Installs the [`redux-thunk`](https://github.com/reduxjs/redux-thunk) middleware for asynchronous dispatch.
 
+This is just for convenience, you can see an alternative [here](#alternative).
+
 ---
 
 ### Table of contents
@@ -11,6 +13,7 @@ Installs the [`redux-thunk`](https://github.com/reduxjs/redux-thunk) middleware 
 * [Setup](#setup)
 * [API](#api)
     * [Registration API](#registration-api)
+* [Alternative](#alternative)
 
 ---
 
@@ -80,3 +83,29 @@ import { ThunkEnhancerToken } from 'fusion-plugin-redux-thunk';
 ```
 
 Typically registered with [`ThunkEnhancer`](#thunkenhancer)
+
+### Alternative
+
+```js
+// main.js
+import React from 'react';
+import Redux, {
+  ReduxToken,
+  ReducerToken,
+  EnhancerToken,
+  GetInitialStateToken,
+} from 'fusion-plugin-react-redux';
+import App from 'fusion-react';
+import {applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
+import reducer from './reducer';
+
+export default () => {
+  const app = new App(root);
+  app.register(ReduxToken, Redux);
+  app.register(ReducerToken, reducer);
+  app.register(EnhancerToken, applyMiddleware(thunk));
+  __NODE__ && app.register(GetInitialStateToken, async ctx => ({}));
+  return app;
+}
+```
